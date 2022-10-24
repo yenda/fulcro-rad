@@ -113,11 +113,11 @@
   :com.fulcrologic.rad.attributes/cardinality)
 
 (def pc-output
-  "ALIAS to :com.wsscode.pathom.connect/output.
+  "ALIAS to :com.wsscode.pathom3.connect.operation/output.
 
   Defines the expected output of an attribute that generates its own
-  data. Does nothing by itself, must be used with :com.wsscode.pathom.connect/resolve, and optionally
-  :com.wsscode.pathom.connect/input.
+  data. Does nothing by itself, must be used with :com.wsscode.pathom3.connect.operation/resolve, and optionally
+  :com.wsscode.pathom3.connect.operation/input.
 
   If you are resolving a graph edge, then the attribute must be a `:ref` type and can include a `target`
   that indicates what kind of entities/rows/docs this attribute resolves to.
@@ -140,25 +140,25 @@
   NOTE: Any pathom keys you'd normally put in a pathom resolver options
   map can be included in an attribute that is used to generate a Pathom resolver.
   "
-  :com.wsscode.pathom.connect/output)
+  :com.wsscode.pathom3.connect.operation/output)
 
 (def pc-resolve
-  "ALIAS to :com.wsscode.pathom.connect/resolve. A `(fn [env input])` that can resolve the `pc-output` of
+  "ALIAS to :com.wsscode.pathom3.connect.operation/resolve. A `(fn [env input])` that can resolve the `pc-output` of
   an attribute.
 
   `env` is your Pathom parser's current parsing environment, and will contain things like your active database
   connection, a reference to the parser itself, query parameters, etc. This environment is completely open,
   and is set up when you create the parser. Database adapters will document what they place here.
 
-  Must be used with :com.wsscode.pathom.connect/output, and optionally :com.wsscode.pathom.connect/input.
+  Must be used with :com.wsscode.pathom3.connect.operation/output, and optionally :com.wsscode.pathom3.connect.operation/input.
 
   See `pc-output`. Also note: Any pathom keys you'd normally put in a pathom resolver options
    map can be included in an attribute that is used to generate a Pathom resolver.
   "
-  :com.wsscode.pathom.connect/resolve)
+  :com.wsscode.pathom3.connect.operation/resolve)
 
 (def pc-input
-  "ALIAS to :com.wsscode.pathom.connect/input. A set of qualified keys that are required to be present in the
+  "ALIAS to :com.wsscode.pathom3.connect.operation/input. A set of qualified keys that are required to be present in the
    `pc-resolve`'s `input` parameter for it to be able to work.
 
    You can use this to \"connect the dots\" of a data graph that are not normally connected in the database
@@ -186,17 +186,17 @@
    See `pc-resolve` and `pc-output`. Also note: Any pathom keys you'd normally put in a pathom resolver options
    map can be included in an attribute that is used to generate a Pathom resolver.
   "
-  :com.wsscode.pathom.connect/input)
+  :com.wsscode.pathom3.connect.operation/input)
 
 (def pc-transform
-  "ALIAS to :com.wsscode.pathom.connect/transform.
+  "ALIAS to :com.wsscode.pathom3.connect.operation/transform.
    See the pathom transform docs: https://blog.wsscode.com/pathom/#connect-transform
 
    Allows one to specify a function that receives the full resolver/mutation map and returns the final version.
 
    Generally used to wrap the resolver/mutation function with some generic operation to augment its data or operations.
   "
-  :com.wsscode.pathom.connect/transform)
+  :com.wsscode.pathom3.connect.operation/transform)
 
 (def pathom3-output
   "ALIAS to :com.wsscode.pathom3.connect.operation/output.
