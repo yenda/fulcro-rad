@@ -157,6 +157,11 @@
   "
   :com.wsscode.pathom3.connect.operation/resolve)
 
+(def pc-batch?
+  "ALIAS to :com.wsscode.pathom3.connect.operation/batch?
+  "
+  :com.wsscode.pathom3.connect.operation/batch?)
+
 (def pc-input
   "ALIAS to :com.wsscode.pathom3.connect.operation/input. A set of qualified keys that are required to be present in the
    `pc-resolve`'s `input` parameter for it to be able to work.
