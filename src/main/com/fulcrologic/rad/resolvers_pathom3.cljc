@@ -51,7 +51,7 @@
                  k               (::attr/qualified-key attr)
                  output          [k]
                  resolve-sym     (symbol (namespace k) (str (name k) "-resolver"))]
-    (log/info "Building Pathom3 attribute resolver for" (::attr/qualified-key attr))
+    (log/debug "Building Pathom3 attribute resolver for" (::attr/qualified-key attr))
     (pco/resolver
       (merge
         {::pco/output  output}
